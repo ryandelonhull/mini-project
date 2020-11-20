@@ -8,6 +8,7 @@ function Navbar() {
       <a className="navbar-brand" href="/">
         SEARCH
       </a>
+      <br></br>
       <a className="navbar-brand" href="/">
         SAVED
       </a>

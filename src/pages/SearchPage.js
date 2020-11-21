@@ -1,6 +1,6 @@
 import React from "react";
 import Search from "../components/Search";
-// import Results from "../components/Results";
+
 // import axios from "axios";
 import API from "../utils/API";
 
@@ -8,7 +8,8 @@ class SearchPage extends React.Component{
     constructor(props) {
         super(props) 
             this.state = {
-                books: [],
+                books: [{}],
+                filteredBooks: [{}]
             };
         
     }
@@ -25,11 +26,20 @@ class SearchPage extends React.Component{
         });
     };
     
+    getBooks = (event) => {
+        const filter = event.target.value;
+        const filterBooks = this.state.users.filter( item => {
+            let values = Object.values(item).join("").toLowerCase();
+            return values.indexOf(filter.toLowerCase()) !== -1;
+        })
+        this.setState({filteredBooks: filterBooks})
+    }
+
     render() {
 
         return (
             <div>
-                <Search/>
+                <Search />
             </div>
         )
     }

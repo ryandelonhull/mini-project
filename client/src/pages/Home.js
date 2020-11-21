@@ -12,7 +12,7 @@ class Home extends Component {
   state = {
     books: [],
     q: "",
-    message: "Search For A Book To Begin!"
+    message: "What book would you like to lookup!"
   };
 
   handleInputChange = event => {
@@ -32,7 +32,7 @@ class Home extends Component {
       .catch(() =>
         this.setState({
           books: [],
-          message: "No New Books Found, Try a Different Query"
+          message: "No New Books Found, Try a Different Search"
         })
       );
   };
